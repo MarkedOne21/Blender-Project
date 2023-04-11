@@ -1,0 +1,27 @@
+import bpy
+
+bpy.ops.mesh.primitive_monkey_add(size=2, enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(1, 1, 1));
+
+bpy.ops.object.empty_add(type='CUBE', align='WORLD', location=(0, 0, 0), scale=(1, 1, 1))
+
+bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(0, 0, 0), rotation=(1.54438, 0.0147343, 0.165701), scale=(1, 1, 1))
+
+bpy.ops.transform.translate(value=(0, 0, 3.8076), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, False, True), mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=False, use_snap_edit=False, use_snap_nonedit=False, use_snap_selectable=False)
+
+bpy.ops.transform.translate(value=(-0, -8.51628, -0), orient_axis_ortho='X', orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', constraint_axis=(False, True, False), mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=False, use_snap_edit=False, use_snap_nonedit=False, use_snap_selectable=False)
+
+bpy.ops.transform.translate(value=(1.28895, -3.473, 3.72529e-08), orient_axis_ortho='X', orient_type='VIEW', orient_matrix=((0.986196, 0.164926, -0.0147338), (0.0101708, 0.0284774, 0.999543), (0.16527, -0.985895, 0.0264069)), orient_matrix_type='VIEW', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=False, use_snap_edit=False, use_snap_nonedit=False, use_snap_selectable=False)
+
+bpy.ops.object.shade_smooth()
+
+bpy.ops.object.parent_set(type='OBJECT', keep_transform=True)
+
+bpy.context.scene.tool_settings.use_keyframe_insert_auto = True
+
+bpy.ops.anim.keyframe_insert_by_name(type="Rotation")
+
+bpy.context.scene.frame_current = 120
+
+bpy.context.scene.frame_end = 120
+
+bpy.context.object.rotation_euler[2] = 6.28319
